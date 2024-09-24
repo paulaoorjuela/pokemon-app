@@ -6,10 +6,9 @@ The Pokémon Search App is a React application that allows users to search for P
 
 ## Features
 
-- **Live Search**: As you type, the app displays Pokémon names that start with the input string.
+- **Search**: The app displays the Pokémon with the name that matches the input text.
 - **Pagination**: Navigate through Pokémon with next and previous buttons.
 - **Detailed View**: Click on a Pokémon to view detailed information on a separate page.
-- **Responsive Design**: The app is designed to work well on both desktop and mobile devices.
 
 ## Technologies Used
 
@@ -32,7 +31,6 @@ Ensure you have Node.js and npm installed on your machine.
    ```bash
    git clone https://github.com/paulaoorjuela/pokemon-app.git
 
-
 2. **Navigate to the project directory:**:
 
    ```bash
@@ -43,11 +41,10 @@ Ensure you have Node.js and npm installed on your machine.
    ```bash
    npm install
 
-
 4. **Run the application:**:
 
    ```bash
-   npm start
+   npm run dev
 
 ### Usage
 

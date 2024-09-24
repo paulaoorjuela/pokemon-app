@@ -37,12 +37,12 @@ const PokemonList = ({ searchResults }) => {
       <div className="pokemon-list">
         {pokemonsToDisplay.map((pokemon) => (
           <div key={pokemon.id} className="pokemon-card">
-            <Link to={`/pokemon/${pokemon.id}`}>
+            <Link className="pokemon-link" to={`/pokemon/${pokemon.id}`}>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
                 alt={pokemon.name}
               />
-              <h5>{pokemon.name}</h5>
+              <p className="poppins-regular pokemon-name">{pokemon.name}</p>
             </Link>
           </div>
         ))}
@@ -51,14 +51,16 @@ const PokemonList = ({ searchResults }) => {
         <button
           onClick={() => setOffset((prev) => Math.max(prev - limit, 0))}
           disabled={!hasPrevious} // Disable if there's no previous page
+          className="poppins-regular"
         >
-          Previous
+          ← Prev
         </button>
         <button
           onClick={() => setOffset((prev) => prev + limit)}
           disabled={!hasNext} // Disable if there's no next page
+          className="poppins-regular"
         >
-          Next
+          Next →
         </button>
       </div>
     </>

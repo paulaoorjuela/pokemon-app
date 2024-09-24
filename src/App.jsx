@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { ApolloProvider } from "@apollo/client";
 import client from "./apolloClient";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import PokemonList from "./components/PokemonList";
 import PokemonDetail from "./components/PokemonDetail";
 import SearchInput from "./components/SearchInput"; // New component for search bar
@@ -15,7 +15,10 @@ const App = () => {
       <Router>
         <div className="app-container">
           <nav className="navbar">
-            <img src="assets/img/logo.png" alt="Logo" className="logo" />
+            <Link className="icon" to={`/`} onClick={location.reload}>
+              <img src="/Pokeball.png" alt="Logo" className="logo" />
+              <p className="poppins-bold">Pokédex</p>
+            </Link>
             <SearchInput setSearchResults={setSearchResults} />
           </nav>
           <main>

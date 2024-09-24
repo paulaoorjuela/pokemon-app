@@ -77,9 +77,12 @@ const SearchInput = ({ setSearchResults }) => {
         id="searchForm"
         onSubmit={handleSearchSubmit}
       >
+        <span>
+          <img src="../assets/images/MagnifyingGlassIcon.png" alt="" />
+        </span>
         <input
           type="text"
-          placeholder="Search Pokémon"
+          placeholder="Search"
           id="searchInput"
           value={searchInput}
           onChange={(e) => setSearchInput(e.target.value)}
@@ -91,28 +94,28 @@ const SearchInput = ({ setSearchResults }) => {
       </form>
 
       {isModalOpen && (
-        <div className="modal">
-          <h2>Select Search Type</h2>
-          <label>
-            <input
-              type="radio"
-              value="name"
-              checked={searchType === "name"}
-              onChange={() => setSearchType("name")}
-            />
-            Name
-          </label>
-          <label>
-            <input
-              type="radio"
-              value="id"
-              checked={searchType === "id"}
-              onChange={() => setSearchType("id")}
-            />
-            ID
-          </label>
-          <button onClick={toggleModal}>Close</button>{" "}
-          {/* Close modal button */}
+        <div className="sort-by-dropdown">
+          <p className="poppins-regular">Sort by:</p>
+          <div className="poppins-regular sort-options">
+            <label>
+              <input
+                type="radio"
+                value="name"
+                checked={searchType === "name"}
+                onChange={() => setSearchType("name")}
+              />
+              Name
+            </label>
+            <label>
+              <input
+                type="radio"
+                value="id"
+                checked={searchType === "id"}
+                onChange={() => setSearchType("id")}
+              />
+              Number
+            </label>
+          </div>
         </div>
       )}
     </div>
