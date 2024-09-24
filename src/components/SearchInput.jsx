@@ -30,7 +30,8 @@ const SearchInput = ({ setSearchResults }) => {
       const regex = /^[a-zA-Z0-9]{3,}$/;
       return regex.test(input);
     } else {
-      return !isNaN(input) && input > 0; // Validate that the ID is a positive number
+      const regex = /^#\d{1,3}$/;
+      return regex.test(input);
     }
   };
 
@@ -43,7 +44,8 @@ const SearchInput = ({ setSearchResults }) => {
         const variables =
           searchType === "name"
             ? { name: searchInput.toLowerCase() }
-            : { id: parseInt(searchInput, 10) };
+            // Remove "#" and convert to integer
+            : { id: parseInt(searchInput.replace("#", ""), 10) };
 
         const { data } = await client.query({
           query: query,
@@ -51,11 +53,10 @@ const SearchInput = ({ setSearchResults }) => {
         });
 
         if (data.pokemon_v2_pokemonspecies.length > 0) {
-          // Set search results to the list
           setSearchResults(data.pokemon_v2_pokemonspecies);
         } else {
           alert("Pokémon not found");
-          setSearchResults([]); // Clear results if not found
+          setSearchResults([]);
         }
       } catch (error) {
         console.error(error);
@@ -77,10 +78,9 @@ const SearchInput = ({ setSearchResults }) => {
         id="searchForm"
         onSubmit={handleSearchSubmit}
       >
-        <span>
-          <img src="../assets/images/MagnifyingGlassIcon.png" alt="" />
-        </span>
+        <img src="src/assets/images/MagnifyingGlassIcon.svg" alt="" />
         <input
+          className="poppins-regular"
           type="text"
           placeholder="Search"
           id="searchInput"

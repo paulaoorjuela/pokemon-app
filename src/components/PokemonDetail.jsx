@@ -60,16 +60,13 @@ const PokemonDetail = () => {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="poppins-regular">Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   const pokemon = data.pokemon_v2_pokemon_by_pk;
 
   return (
     <div className="pokemon-detail">
-      <Link to="/" className="back-button">
-        ← Back to List
-      </Link>
       <h1>{pokemon.name}</h1>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}

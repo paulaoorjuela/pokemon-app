@@ -16,7 +16,7 @@ const App = () => {
         <div className="app-container">
           <nav className="navbar">
             <Link className="icon" to={`/`} onClick={location.reload}>
-              <img src="/Pokeball.png" alt="Logo" className="logo" />
+              <img src="/Pokeball.svg" alt="Logo" className="logo" />
               <p className="poppins-bold">Pokédex</p>
             </Link>
             <SearchInput setSearchResults={setSearchResults} />

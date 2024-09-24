@@ -22,7 +22,7 @@ const PokemonList = ({ searchResults }) => {
     variables: { limit, offset },
   });
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="poppins-regular">Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
   // Calculate next and previous offsets
@@ -38,6 +38,7 @@ const PokemonList = ({ searchResults }) => {
         {pokemonsToDisplay.map((pokemon) => (
           <div key={pokemon.id} className="pokemon-card">
             <Link className="pokemon-link" to={`/pokemon/${pokemon.id}`}>
+              <p className="poppins-light pokemon-id">#{pokemon.id.toString().padStart(3, "0")}</p>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
                 alt={pokemon.name}
