@@ -1,3 +1,5 @@
+is it ok like this?
+
 # Pokémon Pokedex App
 
 ## Overview
@@ -57,7 +59,7 @@ Ensure you have Node.js and npm installed on your machine.
 
 ### Project Structure
 
-    ```bash
+```bash
 /pokemon-search-app
 ├── /public
 │   └── PokeballIcon.svg
@@ -83,7 +85,6 @@ Ensure you have Node.js and npm installed on your machine.
 ├── index.html
 ├── package.json
 └── README.md
-
 
 ### Future Improvements
 
