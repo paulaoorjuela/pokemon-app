@@ -1,23 +1,30 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import SearchInput from "./SearchInput"; // Import your SearchInput component
+import SearchInput from "./SearchInput"; // Import SearchInput component
 
-const Navbar = ({ setSearchResults }) => {
-  const location = useLocation(); // Get the current location
+const Navbar = ({ setSearchResults, searchType, setSearchType }) => {
+  const location = useLocation(); // Get current location from router
 
   return (
-    <nav className="navbar">
-      {/* Conditionally render logo and search input */}
+    <>
+    {/* Render the navbar only if the current path does not start with "/pokemon/" */}
       {!location.pathname.startsWith("/pokemon/") && (
-        <>
-          <Link className="icon" to={`/`} onClick={() => window.location.reload()}>
-            <img src="/Pokeball.svg" alt="Logo" className="logo" />
+        <nav className="navbar">
+          <Link
+            className="icon"
+            to={`/`}
+          >
+            <img src="/Pokeballicon.svg" alt="Logo" className="logo" />
             <p className="poppins-bold">Pokédex</p>
           </Link>
-          <SearchInput setSearchResults={setSearchResults} />
-        </>
+          <SearchInput
+            setSearchResults={setSearchResults}// updates search results
+            searchType={searchType}// Current search type (by name or id)
+            setSearchType={setSearchType}// updates the search type
+          />
+        </nav>
       )}
-    </nav>
+    </>
   );
 };
 

@@ -1,4 +1,4 @@
-# Pokémon Search App
+# Pokémon Pokedex App
 
 ## Overview
 
@@ -7,8 +7,11 @@ The Pokémon Search App is a React application that allows users to search for P
 ## Features
 
 - **Search**: The app displays the Pokémon with the name that matches the input text.
+- **Favorites**: Users can save their favorite Pokémon to a favorites list, stored in sessionStorage.
 - **Pagination**: Navigate through Pokémon with next and previous buttons.
 - **Detailed View**: Click on a Pokémon to view detailed information on a separate page.
+- **Custom Alerts**: Alerts appear for user feedback, such as search results or errors.
+
 
 ## Technologies Used
 
@@ -53,5 +56,38 @@ Ensure you have Node.js and npm installed on your machine.
 - Click on a Pokémon to view more details.
 
 ### Project Structure
+
+   /pokemon-search-app
+   ├── /public
+   │   └── PokeballIcon.svg
+   ├── /src
+   │   ├── /assets
+   │   │   ├── /images
+   │   │ 
+   │   ├── /components
+   │   │   ├── Alert.jsx
+   │   │   ├── Navbar.jsx
+   │   │   ├── PokemonList.jsx
+   │   │   ├── SearchInput.js
+   │   │ 
+   │   ├── /pages
+   │   │   ├── Favotites.jsx
+   │   │   ├── PokemonDetail.jsx
+   │   │
+   │   ├── apolloClient.js
+   │   ├── App.jsx
+   │   ├── main.jsx
+   │   ├── styles.css
+   │ 
+   ├── index.html
+   ├── package.json
+   └── README.md
+
+### Future Improvements
+
+- Implement user authentication to save favorites on the server.
+- Add more filtering options (e.g., by type).
+- Improve error handling and loading states.
+
 ### Contributing
 Contributions are welcome! If you have suggestions or improvements, please open an issue or submit a pull request.

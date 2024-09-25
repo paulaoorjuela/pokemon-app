@@ -31,7 +31,7 @@
   height: 100vh;
 }
 
-.app-container main{
+.app-container main {
   background-color: #dc0a2d;
 }
 
@@ -147,7 +147,11 @@
 
 .pokemon-card {
   background: rgb(255, 255, 255);
-  background: linear-gradient(180deg, rgb(255 255 255) 52%, rgb(233 233 233) 54%);
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255) 52%,
+    rgb(233 233 233) 54%
+  );
   text-align: center;
   padding: 2px;
   border-radius: 8px;
@@ -201,21 +205,221 @@
 
 /* ------------------------------------------- PokemonDetail.jsx ------------------------------------------- */
 
-.pokemon-detail {
-  padding: 20px;
+.pokemon-detail-container {
+  width: auto;
+  height: 105vh;
+  padding: 20px 7px;
+  color: #fff;
+  position: relative;
+}
+
+.pokeball-bg {
+  opacity: 10%;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 190px;
+}
+
+.pokemon-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+}
+
+.pokemon-name-detail {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.pokemon-id-detail {
+  font-size: 15px;
+  margin-left: auto;
+}
+
+.pokemon-image {
+  width: 100%;
+  max-width: 209px;
+  margin: 0px 79px;
+  position: absolute;
+}
+
+.pokemon-type-tags {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+}
+
+.pokemon-type {
+  padding: 4px 8px;
+  border-radius: 12px;
+  color: white;
+  text-transform: capitalize;
+  font-size: 10px;
+}
+
+.pokemon-about-section {
+  background: white;
+  color: #333;
+  padding: 51px 25px 1px 25px;
+  border-radius: 8px;
+  margin-top: 150px;
+  box-shadow: inset 0px 2px 3px #b8b8b8, inset 0px 1px 5px #b8b8b8;
+}
+
+.dividing-line {
+  border: 1px solid #e0e0e0;
+}
+
+.pokemon-info-grid {
+  display: flex;
   text-align: center;
+  justify-content: space-evenly;
+  margin: 10px 0;
+  font-size: 12px;
 }
 
-.pokemon-detail img {
-  width: 200px;
-  height: 200px;
+.pokemon-description {
+  font-size: 12px;
+  text-align: justify;
+  margin: 16px 0;
 }
 
-.pokemon-detail ul {
-  list-style-type: none;
-  padding: 0;
+.pokemon-stats-section {
+  margin-top: 16px;
 }
 
-.pokemon-detail li {
-  margin: 5px 0;
+.stat-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stat-name {
+  font-size: 12px;
+}
+
+.stat-value {
+  font-size: 12px;
+  color: #666666;
+  margin-left: auto;
+}
+
+.stat-bar-container {
+  background: #e0e0e0;
+  border-radius: 8px;
+  height: 8px;
+  width: 230px;
+  margin-left: 11px;
+}
+
+.stat-bar {
+  height: 100%;
+  border-radius: 8px;
+  max-width: 230px;
+}
+
+.add-favorites-button {
+  display: flex;
+  background-color: #dc0a2d;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 50px;
+  margin: 20px auto;
+}
+
+/* ------------------------------------------- Go to favorites button ------------------------------------------- */
+
+.go-to-favorites {
+  background-color: #dc0a2d;
+  color: #fff;
+  border: 0;
+  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  position: fixed;
+  bottom: 35px;
+  right: 26px;
+  box-shadow: 0px 0px 0.6px #3b3a3a, 0px 0px 4px #3b3a3a;
+}
+
+/* ------------------------------------------- Favorites.jsx ------------------------------------------- */
+
+.favorites-title {
+  font-size: 18px;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.no-pokemon-message {
+  font-size: 16px;
+  color: #666666;
+  text-align: center;
+  margin: 20px auto;
+}
+
+/* ------------------------------------------- loader ------------------------------------------- */
+
+.pokeball-loader {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 320px;
+  left: 165px;
+}
+
+/* ------------------------------------------- Custom alerts ------------------------------------------- */
+.error-alert{
+  background-color: #dc0a2d;
+}
+
+.success-alert{
+  background-color: #4caf50;
+}
+
+.custom-alert {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #000;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  opacity: 0.9;
+  z-index: 1000;
+  animation: slideIn 0.3s ease, fadeOut 0.5s 2.5s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-50%) translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(-50%) translateY(0);
+    opacity: 0.9;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
 }
