@@ -125,7 +125,7 @@ const PokemonDetail = () => {
     return (
       <img
         className="pokeball-loader"
-        src="/images/PokeLoader.gif"
+        src="/PokeLoader.gif"
       />
     );
   if (error) return <p>Error: {error.message}</p>;
@@ -144,7 +144,7 @@ const PokemonDetail = () => {
     >
       <img
         className="pokeball-bg"
-        src="/images/Pokeball.svg"
+        src="/Pokeball.svg"
         alt="pokeball"
       />
       <div className="pokemon-header" style={{ backgroundColor: bgColor }}>
@@ -189,7 +189,7 @@ const PokemonDetail = () => {
         <div className="poppins-light pokemon-info-grid">
           <div>
             <p>
-              <img src="/images/weight-icon.svg" />
+              <img src="/weight-icon.svg" />
               <strong> {pokemon.weight / 10} kg</strong>{/* Display weight */}
             </p>
             <span>Weight</span>
@@ -197,7 +197,7 @@ const PokemonDetail = () => {
           <div className="dividing-line"></div>
           <div>
             <p>
-              <img src="/images/height-icon.svg" />
+              <img src="/height-icon.svg" />
               <strong> {pokemon.height / 10} m</strong>{/* Display height */}
             </p>
             <span>Height</span>
