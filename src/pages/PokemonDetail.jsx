@@ -67,6 +67,9 @@ const PokemonDetail = () => {
 
   return (
     <div className="pokemon-detail">
+      <Link to={`/`}>
+                  back
+                </Link>
       <h1>{pokemon.name}</h1>
       <img
         src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}

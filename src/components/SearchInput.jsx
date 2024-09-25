@@ -44,8 +44,8 @@ const SearchInput = ({ setSearchResults }) => {
         const variables =
           searchType === "name"
             ? { name: searchInput.toLowerCase() }
-            // Remove "#" and convert to integer
-            : { id: parseInt(searchInput.replace("#", ""), 10) };
+            : // Remove "#" and convert to integer
+              { id: parseInt(searchInput.replace("#", ""), 10) };
 
         const { data } = await client.query({
           query: query,
@@ -88,8 +88,8 @@ const SearchInput = ({ setSearchResults }) => {
           onChange={(e) => setSearchInput(e.target.value)}
         />
         <button type="button" onClick={toggleModal}>
-          #
-        </button>{" "}
+          {searchType === "name" ? "A" : "#"}
+        </button>
         {/* Button to open the modal */}
       </form>
 

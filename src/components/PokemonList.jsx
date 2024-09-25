@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import { Link } from "react-router-dom";
 
-// GraphQL Query for fetching Pokemon with pagination
+// GraphQL Query
 export const GET_POKEMONS = gql`
   query GetPokemons($limit: Int!, $offset: Int!) {
     pokemon_v2_pokemon(limit: $limit, offset: $offset) {
@@ -17,7 +17,7 @@ export const GET_POKEMONS = gql`
 
 const PokemonList = ({ searchResults }) => {
   const [offset, setOffset] = useState(0);
-  const limit = 18; // Set your limit for pagination
+  const limit = 18; // limit for pagination
   const { loading, error, data } = useQuery(GET_POKEMONS, {
     variables: { limit, offset },
   });
@@ -26,11 +26,16 @@ const PokemonList = ({ searchResults }) => {
   if (error) return <p>Error: {error.message}</p>;
 
   // Calculate next and previous offsets
-  const hasNext = data.pokemon_v2_pokemon.length === limit; // Check if there are more Pokemon to load
-  const hasPrevious = offset > 0; // Check if there is a previous page
+  const hasNext = data.pokemon_v2_pokemon.length === limit;
+  const hasPrevious = offset > 0;
 
   const pokemonsToDisplay =
     searchResults.length > 0 ? searchResults : data.pokemon_v2_pokemon;
+
+  const capitalizeFirstLetter = (name) => {
+    if (!name) return "";
+    return name.charAt(0).toUpperCase() + name.slice(1);
+  };
 
   return (
     <>
@@ -38,12 +43,14 @@ const PokemonList = ({ searchResults }) => {
         {pokemonsToDisplay.map((pokemon) => (
           <div key={pokemon.id} className="pokemon-card">
             <Link className="pokemon-link" to={`/pokemon/${pokemon.id}`}>
-              <p className="poppins-light pokemon-id">#{pokemon.id.toString().padStart(3, "0")}</p>
+              <p className="poppins-light pokemon-id">
+                #{pokemon.id.toString().padStart(3, "0")}
+              </p>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
                 alt={pokemon.name}
               />
-              <p className="poppins-regular pokemon-name">{pokemon.name}</p>
+              <p className="poppins-regular pokemon-name">{capitalizeFirstLetter(pokemon.name)}</p>
             </Link>
           </div>
         ))}
@@ -51,14 +58,14 @@ const PokemonList = ({ searchResults }) => {
       <div className="pagination">
         <button
           onClick={() => setOffset((prev) => Math.max(prev - limit, 0))}
-          disabled={!hasPrevious} // Disable if there's no previous page
+          disabled={!hasPrevious} // if there's no previous page
           className="poppins-regular"
         >
           ← Prev
         </button>
         <button
           onClick={() => setOffset((prev) => prev + limit)}
-          disabled={!hasNext} // Disable if there's no next page
+          disabled={!hasNext} // if there's no next page
           className="poppins-regular"
         >
           Next →
