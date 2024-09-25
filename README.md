@@ -57,31 +57,32 @@ Ensure you have Node.js and npm installed on your machine.
 
 ### Project Structure
 
-   /pokemon-search-app
-   ├── /public
-   │   └── PokeballIcon.svg
-   ├── /src
-   │   ├── /assets
-   │   │   ├── /images
-   │   │ 
-   │   ├── /components
-   │   │   ├── Alert.jsx
-   │   │   ├── Navbar.jsx
-   │   │   ├── PokemonList.jsx
-   │   │   ├── SearchInput.js
-   │   │ 
-   │   ├── /pages
-   │   │   ├── Favotites.jsx
-   │   │   ├── PokemonDetail.jsx
-   │   │
-   │   ├── apolloClient.js
-   │   ├── App.jsx
-   │   ├── main.jsx
-   │   ├── styles.css
-   │ 
-   ├── index.html
-   ├── package.json
-   └── README.md
+```bash
+/pokemon-search-app
+├── /public
+│   └── PokeballIcon.svg
+├── /src
+│   ├── /assets
+│   │   ├── /images
+│   │ 
+│   ├── /components
+│   │   ├── Alert.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── PokemonList.jsx
+│   │   ├── SearchInput.jsx
+│   │ 
+│   ├── /pages
+│   │   ├── Favorites.jsx
+│   │   ├── PokemonDetail.jsx
+│   │
+│   ├── apolloClient.js
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── styles.css
+│ 
+├── index.html
+├── package.json
+└── README.md
 
 ### Future Improvements
 
