@@ -22,7 +22,7 @@ const PokemonList = ({ searchResults, searchType }) => {
     variables: { limit, offset },// Pass limit and offset as variables
   });
 
-  if (loading) return <img className="pokeball-loader" src="/src/assets/images/PokeLoader.gif"/>;
+  if (loading) return <img className="pokeball-loader" src="/images/PokeLoader.gif"/>;
   if (error) return <p>Error: {error.message}</p>;
 
   const hasNext = data.pokemon_v2_pokemon.length === limit;// Checks if there's a next page

@@ -104,7 +104,7 @@ const SearchInput = ({ setSearchResults, searchType, setSearchType }) => {
         id="searchForm"
         onSubmit={handleSearchSubmit}
       >
-        <img src="src/assets/images/MagnifyingGlassIcon.svg" alt="" />
+        <img src="/images/MagnifyingGlassIcon.svg" alt="" />
         <input
           className="poppins-regular"
           type="text"
