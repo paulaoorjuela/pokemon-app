@@ -1,5 +1,3 @@
-is it ok like this?
-
 # Pokémon Pokedex App
 
 ## Overview
