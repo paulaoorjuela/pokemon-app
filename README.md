@@ -65,7 +65,6 @@ Ensure you have Node.js and npm installed on your machine.
 │   └── PokeballIcon.svg
 ├── /src
 │   ├── /assets
-│   │   ├── /images
 │   │ 
 │   ├── /components
 │   │   ├── Alert.jsx

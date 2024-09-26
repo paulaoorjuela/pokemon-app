@@ -37,7 +37,7 @@ const App = () => {
             </Routes>
           </main>
           <Link to="/favorites">
-            <button className="go-to-favorites"><img className="heart-icon" src="/src/assets/images/heart-icon.png" alt="" /></button>
+            <button className="go-to-favorites"><img className="heart-icon" src="/heart-icon.png" alt="" /></button>
           </Link>
         </div>
       </Router>
