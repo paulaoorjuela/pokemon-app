@@ -346,6 +346,7 @@
 
 .go-to-favorites {
   background-color: #dc0a2d;
+  cursor: pointer;
   color: #fff;
   border: 0;
   border-radius: 50px;
