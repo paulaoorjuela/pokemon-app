@@ -42,6 +42,12 @@
   padding: 10px 20px;
 }
 
+.logo {
+  width: 23px;
+  height: 23px;
+  margin-right: 12px;
+}
+
 .icon {
   display: flex;
   align-items: center;
@@ -55,10 +61,14 @@
   margin: 0;
 }
 
-.logo {
-  width: 23px;
-  height: 23px;
-  margin-right: 12px;
+@media (min-width:1028px) {
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  .icon {
+    font-size: 45px;
+  }
 }
 
 /* ------------------------------------------- SearchInput.jsx ------------------------------------------- */
@@ -132,6 +142,12 @@
   box-shadow: inset 0px 2px 3px #b8b8b8, inset 0px 1px 5px #b8b8b8;
 }
 
+@media (min-width:1028px) {
+  .search-form input {
+    width: 93%;
+  }
+}
+
 /* ------------------------------------------- PokemonList.jsx ------------------------------------------- */
 
 .pokemon-list {
@@ -201,6 +217,30 @@
   cursor: pointer;
   border-radius: 50px;
   box-shadow: inset 0px 2px 3px #b8b8b8, inset 0px 1px 5px #b8b8b8;
+}
+
+@media (min-width:1028px) {
+  .pokemon-list {
+    grid-template-columns: repeat(auto-fit, minmax(157px, 1fr));
+    gap: 15px 16px;
+  }
+  .pokemon-card {
+    width: 160px;
+    height: 160px;
+  }
+  .pokemon-card img {
+    width: 110px;
+    height: 110px;
+  }
+  .pokemon-id {
+    font-size: 11px;
+  }
+  .pokemon-name {
+    font-size: 15px;
+  }
+  .pagination button {
+    padding: 11px 40px;
+  }
 }
 
 /* ------------------------------------------- PokemonDetail.jsx ------------------------------------------- */
