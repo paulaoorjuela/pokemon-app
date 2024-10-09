@@ -117,7 +117,7 @@
 .sort-by-dropdown {
   width: 100px;
   position: absolute;
-  margin-left: 62%;
+  right: 6%;
   background: #dc0a2d;
   margin-top: 2%;
   border-radius: 10px;
@@ -145,6 +145,11 @@
 @media (min-width: 1028px) {
   .search-form input {
     width: 93%;
+  }
+  .sort-by-dropdown {
+    width: 131px;
+    right: 2%;
+    margin-top: 1%;
   }
 }
 
